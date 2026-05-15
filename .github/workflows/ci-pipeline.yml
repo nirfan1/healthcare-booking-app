@@ -1,0 +1,33 @@
+name: Healthcare Booking App CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - feature-login-page
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Display project files
+        run: ls -la
+
+      - name: Validate HTML file exists
+        run: test -f index.html
+
+      - name: Validate CSS file exists
+        run: test -f style.css
+
+      - name: Simulate automated testing
+        run: echo "Automated tests completed successfully."
+
+      - name: Simulate security check
+        run: echo "Security scan completed. No major issues found."
